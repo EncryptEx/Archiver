@@ -26,11 +26,18 @@ if (not hassettings):
 		#save value to file
 		fh=open("savesettings.archiversettings","w+",encoding="UTF-8")
 		fh.write("path="+tpath)
+		mypath = tpath
 		#ask for extra files 
 		efiles = input("Do you want extra files to be classified as well? (Y/N): ")
 		if (efiles == "" or efiles == None or len(efiles) <= 0): 
 			print("[ERROR] Can't be blank.")
 			quit()
+		if(efiles in ["Y","y","YES","Yes","yes","True","true","TRUE"]):
+			wantsextrafiles = True
+			print("[SETTINGS] Enabled Extra Files Folder Creation")
+		else: 
+			wantsextrafiles = False
+			print("[SETTINGS] Disabled Extra Files Folder Creation")
 		fh.write("\nWantsExtraFiles="+efiles)
 
 		#ask more things
@@ -57,7 +64,6 @@ if(not wantsToContinue):
 	if (mypath == "" or mypath == None or len(mypath) <= 0): 
 		print("[ERROR] Can't be blank.") 
 		quit()
-
 
 
 
