@@ -1,7 +1,9 @@
 from os import listdir
 import os.path 
 import time
-mypath = "C:/Users/IBM/Downloads/"
+mypath = input("Enter full path of folder:")
+if (mypath == "" or mypath == None): mypath = "C:/Users/IBM/Downloads/"
+
 stuff = listdir(mypath)
 data = {}
 
