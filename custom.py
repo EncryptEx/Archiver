@@ -118,88 +118,89 @@ def moveFile(path):
 exception = True
 
 for file in data:
+	extension =os.path.splitext(file)[1]
 	if(file == "desktop.ini" or file.endswith(".ini") or file.lower().endswith(".DAT")): continue
 	if file.endswith(".exe") or file.endswith(".msi"):
 		exeDir = "executables/"
 		createDir(mypath,exeDir)
 		moveFile(mypath+exeDir+file)
 
-	if file.endswith(".png") or file.endswith(".img") or file.endswith(".jpg") or file.endswith(".jpeg") or file.endswith(".HEIC") or file.endswith(".gif") or file.endswith(".svg") or file.endswith(".webp"):
+	if (extension in [".png", ".img", ".jpg", ".jpeg", ".HEIC", ".gif", ".svg", ".webp"]):
 		imgDir = "images/"
 		createDir(mypath,imgDir)
 		moveFile(mypath+imgDir+file)
 		
-	if file.endswith(".mp4") or file.endswith(".mov"):
+	if (extension in [".mp4", ".mov"]):
 		videoDir = "videos/"
 		createDir(mypath,videoDir)
 		moveFile(mypath+videoDir+file)
 
-	if file.endswith(".wav") or file.endswith(".mp3") or file.endswith(".ogg") or file.endswith(".aac") or file.endswith(".m4a"):
+	if (extension in [".wav", ".mp3", ".ogg", ".aac", ".m4a"]):
 		audioDir = "audios/"
 		createDir(mypath,audioDir)
 		moveFile(mypath+audioDir+file)
 
-	if file.endswith(".stl") or file.endswith(".obj"):
+	if (extension in [".stl", ".obj"]):
 		threedDir = "3dFiles/"
 		createDir(mypath,threedDir)
 		moveFile(mypath+threedDir+file)
 
-	if file.endswith(".rar") or file.endswith(".zip") or file.endswith(".7z") or file.endswith(".tar") or file.endswith(".rar5"):
+	if (extension in [".rar", ".zip", ".7z", ".tar", ".rar5"]):
 		zipDir = "compressed/"
 		createDir(mypath,zipDir)
 		moveFile(mypath+zipDir+file)
 
-	if file.endswith(".txt") or file.endswith(".md"):
+	if (extension in [".txt", ".md"]):
 		txtDir = "notepad/"
 		createDir(mypath,txtDir)
 		moveFile(mypath+txtDir+file)
 
-	if file.endswith(".jar") or file.endswith(".schematic") or file.endswith(".schem"):
+	if (extension in [".jar", ".schematic", ".schem"]):
 		mcDir = "minecraft/"
 		createDir(mypath,mcDir)
 		moveFile(mypath+mcDir+file)
 
-	if file.endswith(".pdf") or file.endswith(".doc") or file.endswith(".docx") or file.endswith(".ppt") or file.endswith(".pptx") or file.endswith(".xls") or file.endswith(".csv"):
+	if (extension in [".pdf", ".doc", ".docx", ".ppt", ".pptx", ".xls", ".csv"]):
 		docDir = "documents/"
 		createDir(mypath,docDir)
 		moveFile(mypath+docDir+file)
 
-	if file.endswith(".skp"):
+	if (extension in [".skp"]):
 		sketchup = "sketchup/"
 		createDir(mypath,sketchup)
 		moveFile(mypath+sketchup+file)
 
-	if file.endswith(".html"):
+	if (extension in [".html"]):
 		htmlDir = "htmls/"
 		createDir(mypath,htmlDir)
 		moveFile(mypath+htmlDir+file)
 
-	if file.endswith(".psd"):
+	if (extension in [".psd"]):
 		psdDir = "psd/"
 		createDir(mypath,psdDir)
 		moveFile(mypath+psdDir+file)
 
-	if file.endswith(".torrent"):
+	if (extension in [".torrent"]):
 		torrentDir = "torrents/"
 		createDir(mypath,torrentDir)
 		moveFile(mypath+torrentDir+file)
 
-	if file.endswith(".bsdesign"):
+	if (extension in [".bsdesign"]):
 		bs4design = "bs4design/"
 		createDir(mypath,bs4design)
 		moveFile(mypath+bs4design+file)
 
-	if file.endswith(".log"):
+	if (extension in [".log"]):
 		logDir = "logs/"
 		createDir(mypath,logDir)
 		moveFile(mypath+logDir+file)
 
-	if file.endswith(".log"):
+	if (extension in [".log"]):
 		logDir = "logs/"
 		createDir(mypath,logDir)
 		moveFile(mypath+logDir+file)
 
-	if file.endswith(".ovpn"):
+	if (extension in [".ovpn"]):
 		ovpnDir = "ovpn/"
 		createDir(mypath,ovpnDir)
 		moveFile(mypath+ovpnDir+file)
