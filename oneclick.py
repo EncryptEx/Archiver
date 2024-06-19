@@ -44,7 +44,7 @@ for file in data:
     checked_file = file.lower()
     if checked_file == "desktop.ini" or checkExtensions(".ini", ".dat"):
         continue
-    if checkExtensions(".exe", ".msi"):
+    if checkExtensions(".exe", ".msi", ".deb", ".apk", ".dmg", ".appimage"):
         exeDir = "executables/"
         createDir(mypath, exeDir)
         moveFile(mypath + exeDir + file)
@@ -70,13 +70,13 @@ for file in data:
         moveFile(mypath + audioDir + file)
         continue
 
-    if checkExtensions(".stl", ".obj"):
+    if checkExtensions(".stl", ".obj", ".fbx", ".3ds", ".dae", ".blend"):
         threedDir = "3dFiles/"
         createDir(mypath, threedDir)
         moveFile(mypath + threedDir + file)
         continue
 
-    if checkExtensions(".rar", ".zip", ".7z", ".tar", ".rar5"):
+    if checkExtensions(".rar", ".zip", ".7z", ".tar", ".rar5", ".gz"):
         zipDir = "compressed/"
         createDir(mypath, zipDir)
         moveFile(mypath + zipDir + file)
@@ -88,7 +88,7 @@ for file in data:
         moveFile(mypath + txtDir + file)
         continue
 
-    if checkExtensions(".jar", ".schematic", ".schem"):
+    if checkExtensions(".jar", ".schematic", ".schem", ".mcworld", ".mcpack"):
         mcDir = "minecraft/"
         createDir(mypath, mcDir)
         moveFile(mypath + mcDir + file)
@@ -100,7 +100,7 @@ for file in data:
         moveFile(mypath + docDir + file)
         continue
 
-    if checkExtensions(".skp"):
+    if checkExtensions(".skp", ".sketchup"):
         sketchup = "sketchup/"
         createDir(mypath, sketchup)
         moveFile(mypath + sketchup + file)
@@ -112,13 +112,13 @@ for file in data:
         moveFile(mypath + htmlDir + file)
         continue
 
-    if checkExtensions(".psd"):
+    if checkExtensions(".psd", ".ai", ".xd", ".fig"):
         psdDir = "psd/"
         createDir(mypath, psdDir)
         moveFile(mypath + psdDir + file)
         continue
 
-    if checkExtensions(".torrent"):
+    if checkExtensions(".torrent", ".magnet"):
         torrentDir = "torrents/"
         createDir(mypath, torrentDir)
         moveFile(mypath + torrentDir + file)
@@ -136,19 +136,19 @@ for file in data:
         moveFile(mypath + logDir + file)
         continue
 
-    if checkExtensions(".log"):
-        logDir = "logs/"
-        createDir(mypath, logDir)
-        moveFile(mypath + logDir + file)
-        continue
-
     if checkExtensions(".ovpn"):
         ovpnDir = "ovpn/"
         createDir(mypath, ovpnDir)
         moveFile(mypath + ovpnDir + file)
         continue
 
+    if checkExtensions(".cc", ".cpp", ".h", ".hpp"):
+        pro = "pro/"
+        createDir(mypath, pro)
+        moveFile(mypath + pro + file)
+        continue
+
     if exception:
         valuePoint = file.find(".")
         if valuePoint:
-            print("Extension not ordered:", file[valuePoint + 1:])
+            print("Extension not ordered:", file[valuePoint + 1 :])
